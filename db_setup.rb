@@ -25,6 +25,7 @@ class CreateBooksMigration < ActiveRecord::Migration
       t.string :language
       t.references :author
       t.integer :published
+      t.string :image_url
     end
   end
 end
