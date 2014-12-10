@@ -1,0 +1,44 @@
+<h1>Nowy wpis w księdze gości</h1>
+
+<%= form_for @entry do |f| %>
+
+<% if @entry.errors.any? %>
+
+<ul>
+
+<% @entry.errors.full_messages.each do |msg| %>
+
+<li><%= msg %> </li>
+
+<% end %>
+
+</ul>
+
+<% end %>
+
+<p>
+
+<%= f.label :name, "Twoje imię:" %> <br/>
+
+<%= f.text_field :name %>
+
+</p>
+
+<p>
+
+<%= f.label :comment, "Twój komentarz:" %> <br/>
+
+<%= f.text_area :comment %>
+
+</p>
+
+<p>
+
+<%= f.label :avatar_url, "Link do Twojego avatara:" %> <br/>
+<%= f.text_field :avatar_url %>
+
+</p>
+
+<%= f.submit "Dodaj" %>
+
+<% end %>
